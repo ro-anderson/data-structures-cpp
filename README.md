@@ -1,2 +1,1 @@
-# studies_in_c
-C.
+# data structures with cpp
