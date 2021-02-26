@@ -1,0 +1,36 @@
+for each data structure:
+
+- construction
+- consult
+- insertion
+- removal
+
+cpp is:
+
+first from 1985;
+OOP;
+based on C sintaxe;
+
+why cpp?
+- leaves data structures memory management to
+the programmer;
+
+- oop allows the separation between logic vision
+from data structures and their implementation;
+
+
+cpp - python:
+- compiled language;
+- c++ generate programs more quikly
+
+to compile with g++
+hello_world.cpp -o hello_world
+
+Basisc sintaxe
+
+- math operations
+- condicional commands
+- repeat commands
+- function declaration
+
+
