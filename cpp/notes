@@ -33,4 +33,128 @@ Basisc sintaxe
 - repeat commands
 - function declaration
 
+int* intPointer;
+
+como a variável acima não foi inicializada,
+o seu conteúdo será undefined.
+
+como obter um endereço de memória?
+
+# alocação estática
+o operador & nos permite obter o end;
+
+ex:
+
+int alpha;
+int* intPointer;
+
+intPointer = &alpha;
+
+# alocação dinamica:
+
+nos permite alocar e liberar
+memória em tempo de execução
+
+vantagens:
+- nao precisa definiar a priori o 
+tamanho da memória a ser utilzada
+- é possível aumentar ou diminuir o 
+tamanho da memírua utilçizada em tepo
+de execução.
+
+os operadores:
+
+new e delete são utilizados 
+para efetuar a alocação e desalocação
+de memória, respectivamente.
+
+Sobre alocação din0mica:
+- as variaveis residem em um local diferente
+das que foram alocadas estaticamente.
+- Uma variável alocada de forma
+din0mica com new nao possui nome
+- essa variável precosa ser acessada
+indiretamente pelo ponteiro retornado por new;
+
+// estática
+int alpha;
+int* intPointer;
+intPointer = &alpha;
+
+// din0mica
+int *intPointer;
+intPointer = new int;
+
+operador *
+
+operador unário
+retorna o conteúdio da variável
+localiozada no endereçio de mem[oria 
+especificado.
+
+anotherInt = *intPointer
+
+- um ponteiro com o valor 0
+por definição, aponta para p vazio,
+mas nao queremos confundir com o 
+inteiro 0.
+
+nesse caso usaremos a costante NULL
+
+#include <cstddef>
+bool* truth = NULL;
+float* money = NULL;
+
+- Cuidados com ponteiros:
+
+// o cont apontado por money
+é copiado para a região
+apontada pór myMoney
+*myMoney = *money;
+
+
+// nesse caso myMoney passa
+a apontar para a mesma região
+apontada por money
+myMoney = money;
+
+no segundo caso temos vazamento de memória.
+Devemos evitar isso:
+
+delete myMoney;
+myMoney = money;
+
+
+Especificaremos o tamanho de um vetor com 
+uma variável constante:
+
+const int NUM_ELEM = 10;
+
+int main(){
+    int c[NUM_ELEM];
+    for(int i = 0; i < NUM_ELEM; i++)
+        c[i] = 2*i;
+}
+
+
+para fazermos alocação dinamica faremos:
+
+int* c = new int[NUM_ELEM];
+
+lembrar de desalocar depois:
+
+delete [] c;
+
+- no caso:
+int c[10]
+
+a variável c armazena o endereço
+base do vetor.
+Nesse caso, c é um ponteiro.
+
+o mesmo ocorre na alocação dinamica:
+
+int* c = new int[NUM_ELEM];
+
+quando passamos um vetor para uma função
 
