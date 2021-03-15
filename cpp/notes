@@ -158,3 +158,219 @@ int* c = new int[NUM_ELEM];
 
 quando passamos um vetor para uma função
 
+
+- Classes em C++
+
+mesmos conceitos de classe
+
+clara divisão dq é parte lógica:
+interface pública de uma estrutura de dados: parte lógica.
+
+encapsular atributos estáticos e comportamento dinamicos em uma caixa
+
+POO foi motivada por problemas do mundo real.
+
+deixamos o escapsulamento longe da interface pública q os outros utilizarão;
+
+classe é a unidade básica da POO
+que encapsula atributos estáticos e comportamento
+din0micos em uma caixa
+
+a classe é um modelo usado para criar objetos , também chamados de 
+instancias.
+
+a comuinicação com objetos é feita pelo uso da interface pública do objeto.
+(public)
+
+a complexidade envolvida na realização de uma tarefa fica escondida
+dentro da classe. (private)
+
+
+pública: métodos que queremos usar
+
+vantagem desse paradigma: facilita o isolamento
+
+adicao de novas fuincioopnalidades
+correção de priblemas
+
+em estruturas de dados, isso permitirá separar a visão lógica, da visão
+de implementação e da visão de aplicação.
+
+filas, pilhas nos vamos dar mais de uma implementação para a mesma est dados.
+manteremos a publica
+modificaremos arquivos privados e implementação
+
+- no .h:
+
+a visao logica de uma classe será sempre criada em um arquivo de ext .h;
+nesse arquivo, definiremos os membros publicos e privados de uma classe;
+
+- no .cpp:
+
+a implementracao da classe será sempre feita em um arquivo de ext .cpp;
+sempre importará o .h com a diretiva include;
+
+
+é comum tentar incluir uma definição de classes mais de uma vez.
+Nesse caso, utilizaremos algumas diretivas que impedem 
+que isso aconteça:
+
+#ifndef: se nao definido
+- Pule este código se já tiver sido incluido;
+
+#defube
+- define im nome para evitar dupla inclusão
+
+#ifndef TIME_H   // Inclua esse bloco apenas se TIME_H não está definido
+#define TIME_H   // Na primeira inclusão, defina TIME_H para que este
+		 // bloco não seja incluído mais de uma vez.
+
+#endif // final do bloco #ifndef
+
+na sessão privada é onde vc coloca os atributyos q não quer q mexam.
+
+- :: é um poerador de resolução de escopo.
+
+int Time::getHour() const{
+
+    return hour;
+}
+
+coloca-se o const quando o método não altera nenhum dos atributos.
+
+
+const garante que se vc tentar mudar um parmetro nao
+vai conseguir.
+
+- Pilhas
+
+- motivação
+
+estrutura linear (1 pedecessor e 1 sucessor no max)
+de inserções e remoções, que ocorrem no topo da pilha.
+1 pessoa lava e outra seca;
+se nao mais para lavar, qm lava  faz uma pausa;
+
+se nao mais para secar, qm seca faz uma pausa;
+
+as operaçoes ocorrem no topo da pilha;
+
+a pessoa q ta lavando dá um push;
+~ isFull?
+entao push;
+
+a pessoa q ta secando da um pop:
+~ isEmpty?
+então pop
+
+
+                                5      
+  push(2)   push(3)  3 push(5)  3 pop()   3
+_         2          2          2         2
+
+perceba q pop nao precisa de parametro.
+
+* TODAS AS OPERAÇOES ACONTECEM NO TOPO DELA;
+
+o 1o elem a etrar na estrutura tem q ser o último a sair
+o ult elemento a entrar tem q ser o primeiro a sair
+
+comportamento parecido com o botão desfgazer de qualquer editor de texto.
+
+inserções e remoções ocorrem no topo.
+
+
+- tipo abstrato de dados
+
+
+
+- aplicaçao da estrutura
+
+quando queremos garantir
+alinhamento de componentes em processos;
+
+chamada de funções na execução de programas;
+
+analise de sintaxe de linguagens de 
+programação;
+
+verificação de alinhamento de parenteses em strings;
+
+
+- detalhes de implementação
+
+implementar uma pilha como um vetor;
+a posição do topo da ppilha depende do numero
+de elementos que estão na pilha;
+
+queremos que inserções e remoções ocorram
+em tempo constante, ou seja,
+independem do número de elementos na estrutura.
+
+- Pilhas
+
+Motivação
+secretaria e médica
+sec faz a fila
+medica pega que chegou primeiro
+
+o primeiro a chegar é o primeiro a sair
+
+a secretaria deve receber a identidade e colocar o paciente
+recém-chegado no final da fila;
+
+se trem mto paciente. a secretaria faz pausa;
+
+o medico chama para o atendimento o paciente
+no início da fila;
+
+se a fila estiver vazia, o médico faz uma pausa;
+
+
+a pessoa q ta secando da um pop:
+~ isEmpty?
+então pop
+
+
+                                       5             5
+  Enqueue(2)   Enqueue(3)  3 Enque(5)  3 Dequeue()   3
+_            2             2           2             
+
+
+o primeiro a entrar é o primeiro a sair. (FiFo)
+o ultimo a entrar tem q ser o ultimo a sair. (LiLo)
+
+comportamento parecido com a cominicação de processos
+ou acessos a algum recurso.
+
+inserções ocorrem no final e remoções
+ocorrem no início;
+
+Tipo abstrato de dados
+
+class Queue
+{
+ public :  
+  Queue(); // Constructor
+  ~Queue(); // Destrutor  
+  bool isEmpty() const;
+  bool isFull() const;
+  void print() const;
+
+  void enqueue(ItemType);      
+  ItemType dequeue();  
+ private:
+  int front;
+  int back;
+  ItemType* structure;
+}
+
+Aplicação da estrutura
+
+garantir q processos acessarão
+recursos compartilhados de uma
+maneira justa.
+
+
+Detalhes de implementação
+
