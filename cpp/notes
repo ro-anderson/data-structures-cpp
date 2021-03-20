@@ -374,3 +374,68 @@ maneira justa.
 
 Detalhes de implementação
 
+-   Listas lineares
+-   Listas encadeadasb
+-   Pilhas com listas encadeadas
+-   Filas com listas encadeadas
+
+
+pq encadeadas?
+
+
+
+-   Listas lineares
+
+cada elemento precedido por 1 elemento e sucedido por outro
+no max 1
+
+isso gera uma ordem nos elementos, que pode ser a ordem de inmclusão
+as estruturas pilha e fila sao listas lineares
+
+pilha e a fila como listas lineares sequenciais
+
+em listas lineareszx sequenciais a orde logica dos elementos é a mesma da ordem física.
+
+isto é, elementos vizibgos na lista estaõ em posicao vizinhaS DE MEMORia
+
+essa organizacao confere acesso em em tempo constante a qualquer elemento, dado o índice
+do elemento.
+
+em tempoi constante, dado o ínmdoce, permite obter elementos em uim vetor ordenado em tempo
+O((log(n))) com busca binária.
+
+vantagens:
+acesso em tempo constatnte;
+
+desvamtagem: ter q alocar espaço uficiente para todos os elementos de uma sí vez.
+caso falte algum espaço, seria oneroso mover todos os elementos para uma nova posição
+de memória co mais espaço;
+
+para manter a ordem, talvez sejam necessários muitos deslocamentos em memória.
+
+Array ordenado: precisamos deslicar vários elementos para mantrer o array ordenado apos insercoes ou remocoes
+
+lista encadeada
+
+é linear em que a ordem lógica dos elementos não é a mesma da ordem física.
+Como é uma lista linear, cada elemento tem um sucessor e um predecessor.
+
+Elementos estão espalhados na memória.
+
+cada elemento precvisa indicar em que endereço o seu sucessor pode ser encontrado
+de modo a manter a ordem lógica.
+o
+
+desvantagens:
+não tempo constante;
+1 -> 2 -> 3 
+
+pra chegar no 3 tem q passar por 1 e 2.
+
+vantagens
+remove flechas
+
+
+pilhas com listas encadeadas
+
+o primeiro elemento entrar
